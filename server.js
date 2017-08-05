@@ -9,20 +9,52 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var articleOne = {
-    title:'Article 1 | Grk',
-    heading:'Article 1',
-    date:'Aug 5, 2017',
-    content:`
-    <p>
-        This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
-    </p>
-    <p>
-        This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
-    </p>
-     <p>
-        This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
-    </p>`
+var articles = {
+    'article-one': {
+        title:'Article 1 | Grk',
+        heading:'Article 1',
+        date:'Aug 5, 2017',
+        content:`
+        <p>
+            This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
+        </p>
+        <p>
+            This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
+        </p>
+         <p>
+            This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
+        </p>`
+    },
+    'article-two': {
+        title:'Article 2 | Grk',
+        heading:'Article 2',
+        date:'Aug 10, 2017',
+        content:`
+        <p>
+            No. 2
+        </p>
+        <p>
+            Yeah, Article 2
+        </p>
+         <p>
+            There's one more ;)
+        </p>`
+    },
+    'article-three': {
+        title:'Article 3 | Grk',
+        heading:'Article 3',
+        date:'Aug 20, 2017',
+        content:`
+        <p>
+            This is 3
+        </p>
+        <p>
+            Call me Article 3
+        </p>
+         <p>
+            Did you check Article 1?
+        </p>`
+    }
 };
 
 function createTemplate(data) {
@@ -54,16 +86,17 @@ function createTemplate(data) {
     return htmlTemplate;
 }
 
-app.get('/article-one',function (req, res){
-   res.send(createTemplate(articleOne)); 
+app.get('/:articleName',function (req, res){
+    var articleName = req.params.articleName;
+   res.send(createTemplate(articles[articlesName])); 
 });
 
 app.get('/article-two', function (req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); 
+  res.send(createTemplate(articles.articleTwo));
 });
 
 app.get('/article-three', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html')); 
+   res.send(createTemplate(articles.articleThree));
 });
 
 app.get('/ui/style.css', function (req, res) {
