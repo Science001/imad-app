@@ -1,12 +1,6 @@
-console.log('Loaded!');
+//Counter code
 
-//Move image
-var img = document.getElementById("madi");
-var marginLeft=0;
-function moveRight(){
-    marginLeft++;
-    img.style.marginLeft = marginLeft + 'px';
+var button = document.getElementById('counter');
+button.onclick = function() {
+    
 }
-img.onclick = function(){
-    var interval = setInterval(moveRight, 10);
-};
