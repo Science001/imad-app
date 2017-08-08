@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-/*
+
 var articles = {
     'article-one': {
         title:'Article 1 | Grk',
@@ -90,12 +90,6 @@ function createTemplate(data) {
     return htmlTemplate;
 }
 
-app.get('/:articleName',function (req, res){
-    var articleName = req.params.articleName;
-   res.send(createTemplate(articles[articleName])); 
-});
-*/
-
 var counter=0;
 app.get('/counter', function(req, res) {
    counter = counter + 1;
@@ -103,8 +97,8 @@ app.get('/counter', function(req, res) {
 });
 
 var names =[];
-app.get('/submit-name/:name', function(req, res) {
-    var name=req.params.name;
+app.get('/submit-name', function(req, res) {
+    var name=req.query.name;
     names.push(name);
     res.send(JSON.stringify(names));
     
@@ -120,6 +114,11 @@ app.get('/ui/main.js', function (req, res) {
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+app.get('/:articleName',function (req, res){
+    var articleName = req.params.articleName;
+   res.send(createTemplate(articles[articleName])); 
 });
 
 
