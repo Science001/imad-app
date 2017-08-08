@@ -10,9 +10,7 @@ button.onclick = function() {
     //What to do with the request response
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            console.log('request.readyState === 4');
             if(request.status === 200) {
-                console.log('request.status === 200');
                 var counter = request.responseText;
                 console.log('var counter = ' + counter);
                 document.getElementById('countvalue').innerHTML = counter.toString();
