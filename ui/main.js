@@ -25,8 +25,6 @@ button.onclick = function() {
 
 //Submit Button
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
 var submit = document.getElementById('submit');
 
 submit.onclick = function() {
@@ -51,6 +49,8 @@ submit.onclick = function() {
     };
     
     //Make the request
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
     request.open('GET','http://scienceganesh007.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
 };
