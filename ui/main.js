@@ -24,3 +24,21 @@ button.onclick = function() {
     request.open('GET','http://scienceganesh007.imad.hasura-app.io/counter',true);
     request.send(null);
 };
+
+//Submit Button
+
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+submit.onlick = function() {
+    //Request
+    
+    //Render
+    var names = ['name1','name2','name3','name4'];
+    var list ='';
+    for(var i=0; i<names.length; ++i) {
+        list += '<li>' + names[i] + '</li>';
+    }
+    var ul = document.getElementById('namesList');
+    ul.innerHTML = list;
+};
