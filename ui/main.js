@@ -15,10 +15,7 @@ button.onclick = function() {
                 console.log('request.status === 200');
                 var counter = request.responseText;
                 console.log('var counter = ' + counter);
-                var span = document.getElementById('countvalue');
-                console.log('var span = ' + span);
-                span.innnerHTML = counter.toString();
-                console.log('span.innerHTML = ' + span);
+                document.getElementById('countvalue').innnerHTML = counter.toString();
             }
         }
     };
