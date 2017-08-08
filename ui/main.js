@@ -32,7 +32,7 @@ var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onlick = function() {
     //Request
-    
+    console.log('click');
     //Render
     var names = ['name1','name2','name3','name4'];
     var list ='';
