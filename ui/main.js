@@ -30,7 +30,8 @@ button.onclick = function() {
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
 var submit = document.getElementById('submit');
-submit.onlick = function() {
+
+submit.onclick = function() {
     //Request
     console.log('click');
     //Render
