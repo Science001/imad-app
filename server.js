@@ -142,7 +142,7 @@ app.get('/articles/:articleName',function (req, res){
     pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName + "'", function(err, result) {
         if(err) {
             res.status(500).send(err.toString());
-        } else if(results.rows.length === 0) {
+        } else if(result.rows.length === 0) {
             res.status(404).send('404: Article not found');
         } else {
             var articleData = result.rows[0];
