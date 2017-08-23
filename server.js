@@ -19,54 +19,6 @@ app.get('/', function (req, res) {
 });
 
 
-var articles = {
-    'article-one': {
-        title:'Article 1 | Grk',
-        heading:'Article 1',
-        date:'Aug 5, 2017',
-        content:`
-        <p>
-            This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
-        </p>
-        <p>
-            This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
-        </p>
-         <p>
-            This is the content of the first article. This is the content of the first article. This is the content of the first article. This is the content of the first article.
-        </p>`
-    },
-    'article-two': {
-        title:'Article 2 | Grk',
-        heading:'Article 2',
-        date:'Aug 10, 2017',
-        content:`
-        <p>
-            No. 2
-        </p>
-        <p>
-            Yeah, Article 2
-        </p>
-         <p>
-            There's one more ;)
-        </p>`
-    },
-    'article-three': {
-        title:'Article 3 | Grk',
-        heading:'Article 3',
-        date:'Aug 20, 2017',
-        content:`
-        <p>
-            This is 3
-        </p>
-        <p>
-            Call me Article 3
-        </p>
-         <p>
-            Did you check Article 1?
-        </p>`
-    }
-};
-
 function createTemplate(data) {
     var title=data.title;
     var date=data.date;
