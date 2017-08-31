@@ -54,7 +54,7 @@ function createTemplate(data) {
 
 function hash(input, salt) {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    return hashed;
+    return hashed.toString();
 }
 
 app.get("/hash/:input", function(req, res) {
