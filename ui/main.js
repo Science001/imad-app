@@ -12,14 +12,14 @@ submit.onclick = function() {
             if(request.status === 200) {
                 //Render
                 console.log("Log in success");
-                alert('Logged in successfully')
+                alert('Logged in successfully');
             }
             else if(request.status === 403) {
                 alert('Username/password incorrect');
             }
             else if (request.status === 500) {
                 alert('Something went wrong!');
-            })
+            }
         }
     };
     
