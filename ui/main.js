@@ -13,6 +13,8 @@ submit.onclick = function() {
                 //Render
                 console.log("Log in success");
                 alert('Logged in successfully');
+                document.getElementById("user-details").style.display="inline";
+                document.getElementById("loggedin-username").innerHTML=;
             }
             else if(request.status === 403) {
                 alert('Username/password incorrect');
