@@ -35,7 +35,7 @@ submit.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //Render
-                showLogin(JSON.stringify(request.responseText.username));
+                showLogin(request.responseText.username);
                 console.log(request.responseText.username);
             }
             else if(request.status === 403) {
