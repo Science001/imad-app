@@ -151,7 +151,7 @@ app.post('/login', function(req, res) {
                     //This object has the { auth: { userId } };
                     
                     res.setHeader('Content-Type','application/json');
-                    res.send(JSON.parse('{ "message" : "You have logged in successfully", username : "' + result.rows[0].username +'"}'));   
+                    res.send(JSON.parse('{ "message" : "You have logged in successfully", "username" : "' + result.rows[0].username +'"}'));   
                 }
                 else {
                     res.setHeader('Content-Type','application/json');
