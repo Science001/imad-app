@@ -11,10 +11,11 @@ submit.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //Render
+                var response=request.responsetext;
                 console.log("Log in success");
                 alert('Logged in successfully');
                 document.getElementById("user-details").style.display="inline";
-                document.getElementById("loggedin-username").innerHTML=;
+                document.getElementById("loggedin-username").innerHTML=response;
             }
             else if(request.status === 403) {
                 alert('Username/password incorrect');
