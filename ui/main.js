@@ -5,15 +5,19 @@ function loggedin() {
     checkLogin.onreadystatechange = function() {
             if(checkLogin.readyState === XMLHttpRequest.DONE) {
                 if(checkLogin.status === 200) {
-                    var response=checkLogin.responseText;
-                    document.getElementById("user-details").style.display="inline";
-                    document.getElementById("loggedin-username").innerHTML=response;
+                    showLogin(checkLogin.responseText);
                 }
             }
     };
     
     checkLogin.open('GET', 'http://scienceganesh007.imad.hasura-app.io/check-login', true);
     checkLogin.send(null);
+}
+
+function showLogin(username) {
+    document.getElementById("user-details").style.display="inline";
+    document.getElementById("loggedin-username").innerHTML=response;
+    document.getElementById("user-form").style.display="none";
 }
 
 //Submit login details
@@ -29,10 +33,8 @@ submit.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //Render
-                var response=JSON.parse(request.responseText);
+                showlogin(request.responseText);
                 console.log("Log in success");
-                document.getElementById("user-details").style.display="inline";
-                document.getElementById("loggedin-username").innerHTML=response;
             }
             else if(request.status === 403) {
                 alert('Username/password incorrect');
@@ -62,7 +64,7 @@ signup.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //Render
-                console.log("Log in success");
+                console.log("Signup success");
                 alert('Registered successfully');
             }
             else if (request.status === 500) {
