@@ -29,7 +29,6 @@ submit.onclick = function() {
                 //Render
                 var response=JSON.parse(request.responseText);
                 console.log("Log in success");
-                alert('Logged in successfully');
                 document.getElementById("user-details").style.display="inline";
                 document.getElementById("loggedin-username").innerHTML=response;
             }
