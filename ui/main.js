@@ -6,6 +6,8 @@ function loggedin() {
             if(checkLogin.readyState === XMLHttpRequest.DONE) {
                 if(checkLogin.status === 200) {
                     showLogin(checkLogin.responseText);
+                } else if (checkLogin.status === 404) {
+                   console.log("No user login found")
                 } else if (checkLogin.status === 500) {
                     alert('Something went wrong!');
                 }
