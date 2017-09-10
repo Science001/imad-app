@@ -16,7 +16,7 @@ function loggedin() {
 
 function showLogin(username) {
     document.getElementById("user-details").style.display="inline";
-    document.getElementById("loggedin-username").innerHTML=response;
+    document.getElementById("loggedin-username").innerHTML=username;
     document.getElementById("user-form").style.display="none";
 }
 
