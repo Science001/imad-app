@@ -135,6 +135,7 @@ app.post('/login', function(req, res) {
             res.status(500).send(err.toString());
         } else {
             if(result.rows.length===0) {
+                res.setHeader('Content-Type','application/json');
                 res.status(403).send(JSON.parse('{ "error" : "Username/Password is incorrect" }'));
             }
             else {
@@ -149,9 +150,11 @@ app.post('/login', function(req, res) {
                     //internally, on the server side, it maps the session id to an object
                     //This object has the { auth: { userId } };
                     
+                    res.setHeader('Content-Type','application/json');
                     res.send(JSON.parse('{ "message" : "You have logged in successfully", "username" : result.rows[0].username }'));   
                 }
                 else {
+                    res.setHeader('Content-Type','application/json');
                     res.status(403).send(JSON.parse('{ "error" : "Username/Password is incorrect" }'));   
                 }
             }
