@@ -163,9 +163,7 @@ app.get('/logout', function(req,res) {
 });
 app.get('/check-login', function(req,res){
    if(req.session && req.session.auth && req.session.auth.userId) {
-       res.send('You are logged in - ' + req.session.auth.userName.toString());
-   } else {
-       res.send('You are NOT logged in');
+       res.status(200).send(req.session.auth.userName.toString());
    }
 });
 
