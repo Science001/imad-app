@@ -36,7 +36,7 @@ submit.onclick = function() {
             if(request.status === 200) {
                 //Render
                 showLogin(request.responseText.username);
-                console.log(request.responseText.username);
+                console.log(request.responseText);
             }
             else if(request.status === 403) {
                 alert('Username/password incorrect');
