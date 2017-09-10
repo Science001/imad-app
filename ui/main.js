@@ -11,7 +11,7 @@ submit.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //Render
-                var response=JSON.parse(request.responsetext);
+                var response=JSON.parse(request.responseText);
                 console.log("Log in success");
                 alert('Logged in successfully');
                 document.getElementById("user-details").style.display="inline";
