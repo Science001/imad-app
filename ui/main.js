@@ -1,3 +1,19 @@
+//Check login
+var checkLogin = new XMLHttpRequest();
+
+checkLogin.onreadystatechange = function() {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            if(request.status === 200) {
+                var response=request.responseText;
+                document.getElementById("user-details").style.display="inline";
+                document.getElementById("loggedin-username").innerHTML=response;
+            }
+        }
+};
+
+checkLogin.open('GET', 'http://scienceganesh007.imad.hasura-app.io/check-login', true);
+checkLogin.send(null);
+
 //Submit login details
 
 var submit = document.getElementById('submit_btn');
