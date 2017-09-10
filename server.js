@@ -164,7 +164,7 @@ app.get('/logout', function(req,res) {
 app.get('/check-login', function(req,res){
    if(req.session && req.session.auth && req.session.auth.userId) {
        res.status(200).send(req.session.auth.userName.toString());
-   } else res.status(404);
+   } else res.status(404).send("User NOT logged in");
 });
 
 
