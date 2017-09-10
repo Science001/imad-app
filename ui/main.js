@@ -6,6 +6,8 @@ function loggedin() {
             if(checkLogin.readyState === XMLHttpRequest.DONE) {
                 if(checkLogin.status === 200) {
                     showLogin(checkLogin.responseText);
+                } else if (request.status === 500) {
+                    alert('Something went wrong!');
                 }
             }
     };
@@ -15,7 +17,7 @@ function loggedin() {
 }
 
 function showLogin(username) {
-    document.getElementById("user-details").style.display="inline";
+    document.getElementById("after-login").style.display="inline";
     document.getElementById("loggedin-username").innerHTML=username;
     document.getElementById("user-form").style.display="none";
 }
@@ -79,4 +81,31 @@ signup.onclick = function() {
     request.open('POST','http://scienceganesh007.imad.hasura-app.io/create-user', true);
     request.setRequestHeader('Content-Type','application/json');
     request.send(JSON.stringify({username: username, password: password}));
+};
+
+var logout = document.getElementById('submit_btn_logout');
+
+logout.onclick = function() {
+    //create request object
+    var request = new XMLHttpRequest();
+    
+    //What to do with the request response
+    request.onreadystatechange = function() {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            if(request.status === 200) {
+                //Render
+                console.log("Logout success");
+                alert(request.responseText);
+                document.getElementById("after-login").style.display="none";
+                document.getElementById("user-form").style.display="block";
+            }
+            else if (request.status === 500) {
+                alert('Something went wrong!');
+            }
+        }
+    };
+    
+    //Make the request
+    request.open('GET','http://scienceganesh007.imad.hasura-app.io/logout', true);
+    request.send(null);
 };
