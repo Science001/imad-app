@@ -6,7 +6,7 @@ function loggedin() {
             if(checkLogin.readyState === XMLHttpRequest.DONE) {
                 if(checkLogin.status === 200) {
                     showLogin(checkLogin.responseText);
-                } else if (request.status === 500) {
+                } else if (checkLogin.status === 500) {
                     alert('Something went wrong!');
                 }
             }
@@ -35,7 +35,7 @@ submit.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //Render
-                showLogin(request.responseText.username);
+                showLogin(JSON.stringify(request.responseText.username));
                 console.log("Login successful");
             }
             else if(request.status === 403) {
