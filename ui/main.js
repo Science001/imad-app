@@ -35,7 +35,7 @@ submit.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //Render
-                var response=JSON.stringify(request.responseText);
+                var response=request.responseText;
                 console.log(response);
             }
             else if(request.status === 403) {
