@@ -1,5 +1,5 @@
 //Check login
-document.addEventListener("DOMContentLoaded", function() {
+function loggedin() {
     var checkLogin = new XMLHttpRequest();
     
     checkLogin.onreadystatechange = function() {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     checkLogin.open('GET', 'http://scienceganesh007.imad.hasura-app.io/check-login', true);
     checkLogin.send(null);
-});
+}
 
 //Submit login details
 
