@@ -33,7 +33,7 @@ submit.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //Render
-                showlogin(request.responseText);
+                showLogin(request.responseText);
                 console.log("Log in success");
             }
             else if(request.status === 403) {
