@@ -3,9 +3,9 @@ function loggedin() {
     var checkLogin = new XMLHttpRequest();
     
     checkLogin.onreadystatechange = function() {
-            if(request.readyState === XMLHttpRequest.DONE) {
-                if(request.status === 200) {
-                    var response=request.responseText;
+            if(checkLogin.readyState === XMLHttpRequest.DONE) {
+                if(checkLogin.status === 200) {
+                    var response=checkLogin.responseText;
                     document.getElementById("user-details").style.display="inline";
                     document.getElementById("loggedin-username").innerHTML=response;
                 }
